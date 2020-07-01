@@ -7,6 +7,7 @@ module.exports = async function(opts){
 
     try{
         const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
             executablePath: utils.chrome(),
             ignoreHTTPSErrors: true
         });
