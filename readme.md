@@ -1,25 +1,36 @@
 
-# chrome下载地址
+# 使用
 
-## win64
+## 第一步：将puppeteer-utils作为项目依赖并安装
+
+```json
+
+"dependencies": {
+    "puppeteer-utils": "git+https://github.com/nandy007/puppeteer-utils.git"
+}
+
+```
+
+## 第二步：下载浏览器内核并解压
+
+### win64
 
 https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/756035/chrome-win.zip
 
-## mac
+### mac
 
 https://storage.googleapis.com/chromium-browser-snapshots/Mac/756035/chrome-mac.zip
 
 
-## linux
+### linux
 
 https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/756035/chrome-linux.zip
 
 
-注：下载后解压到某个路径，在使用的时候需要设置路径
+注：下载后解压到某个目录，后面会用到这个目录
 
-# 使用
 
-## 第一步：修改页面样式
+## 第三步：修改页面样式
 
 页面默认是按照A4尺寸打印，并且默认会调用页面的<code>print</code>媒体选择器进行渲染，当页面浏览器展示和打印时效果有差异时需要给print媒体选择器添加样式。
 
@@ -47,7 +58,7 @@ https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/756035/chrom
 
 ```
 
-## 第二步：代码调用
+## 第四步：代码调用
 
 ```javascript
 
