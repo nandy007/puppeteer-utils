@@ -49,10 +49,13 @@ https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/756035/chrom
 
 ```javascript
 
+const path = require('path');
+
 const htmlToPdf = require('puppeteer-utils/htmlToPdf');
 
-const path = require('path');
-// const url = 'http://127.0.0.1:8081/build/rskchk/report.html';
+const utils = require('puppeteer-utils/utils');
+
+utils.basePath = ''; // 设置为具体的chrome所在目录，该目录下存放解压后的目录（包含解压目录，即chrome-xxx）
 
 const url = 'https://www.baidu.com';
 
