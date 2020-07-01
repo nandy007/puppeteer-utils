@@ -23,10 +23,10 @@ module.exports = async function(opts){
         //     content: `
         //     @media print{
         //         html, body, #app,
-        //         aui-rskchk-report .report .main .module .box .box-item .content .content-item .detail{
+        //         .report .main .module .box .box-item .content .content-item .detail{
         //             height: auto !important;
         //         }    
-        //         aui-rskchk-report .report{
+        //         .report{
         //             width: 100%;
         //         }
         //         .content-item{
@@ -35,6 +35,7 @@ module.exports = async function(opts){
         //         *{
         //             position: static !important;
         //         }
+        //         .box-item {page-break-inside: avoid;}
         //     }
 
         //     @page{     
