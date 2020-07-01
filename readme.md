@@ -68,7 +68,7 @@ const htmlToPdf = require('puppeteer-utils/htmlToPdf');
 
 const utils = require('puppeteer-utils/utils');
 
-utils.basePath = ''; // 设置为具体的chrome所在目录，该目录下存放解压后的目录（包含解压目录，即chrome-xxx）
+utils.basePath = ''; // 设置为具体的chrome所在目录，该目录下存放解压后的目录（不包含解压目录，即chrome-xxx）
 
 const url = 'https://www.baidu.com';
 
