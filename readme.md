@@ -15,6 +15,8 @@ https://storage.googleapis.com/chromium-browser-snapshots/Mac/756035/chrome-mac.
 https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/756035/chrome-linux.zip
 
 
+注：下载后解压到某个路径，在使用的时候需要设置路径
+
 # 使用
 
 ## 第一步：修改页面样式
