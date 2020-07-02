@@ -46,14 +46,14 @@ module.exports = async function(opts){
         // });
         
         await page.emulateMedia('print');
-        await page.pdf(Object.assign(pdfOpts, {
+        await page.pdf(Object.assign({
             path: savePath,
             format: 'A4',
             scale: 1,
             printBackground: true,
             landscape: false,
             displayHeaderFooter: false,
-        }));
+        }, pdfOpts));
     
         await browser.close();
     }catch(e){
