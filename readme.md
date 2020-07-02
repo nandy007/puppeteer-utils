@@ -79,7 +79,20 @@ const pdfFilePath = path.join(__dirname, 'index.pdf');
         url, // 设置要生成pdf的html页面地址
         savePath: pdfFilePath, // pdf文件的完整路径
         // waitTime: 3000 // 页面请求后等待时间
-        // pdfOpts: {} // pdf生成选项
+        pdfOpts: {
+            displayHeaderFooter: true, // 显示页眉页脚
+            headerTemplate: `<div
+            style="width:80%;margin:0 auto;font-size:8px;border-bottom:1px solid #ddd;padding:10px 0;display: flex; justify-content: space-between;">
+            <span>我是页眉</span>
+            <span>我也是页眉</span>
+            </div>`, // 页眉模板
+            footerTemplate: `<div
+            style="width:80%;margin:0 auto;font-size:8px;border-bottom:1px solid #ddd;padding:10px 0;display: flex;">
+            <span style="flex:1;">我是页脚</span><span class="pageNumber"></span><span>/</span><span class="totalPages"></span>
+            <span style="flex:1;text-align:right;">我也是页脚</span>
+            </div>`, // 页脚模板，pageNumber，totalPages样式可直接被数据注入
+            margin : {top: 80,bottom: 80 },
+        } // pdf生成选项
     });
     console.log(rs ? '成功' : '失败');
 })();

@@ -46,6 +46,7 @@ module.exports = async function(opts){
         // });
         
         await page.emulateMedia('print');
+        
         await page.pdf(Object.assign({
             path: savePath,
             format: 'A4',
