@@ -87,5 +87,70 @@ const pdfFilePath = path.join(__dirname, 'index.pdf');
 
 ```
 
+# F & Q
+
+## linux下报错libxxx.so.x找不到
+
+原因是依赖库不存在，可通过如下命令安装相关依赖：
+
+```bash
+
+yum install pango.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_64 libXext.x86_64 libXi.x86_64 libXtst.x86_64 cups-libs.x86_64 libXScrnSaver.x86_64 libXrandr.x86_64 GConf2.x86_64 alsa-lib.x86_64 atk.x86_64 gtk3.x86_64 -y
+
+```
+
+## linux下转换的pdf有乱码
+
+原因是字体库不全导致，可通过如下步骤解决：
+
+### 安装基础字体
+
+```bash
+
+yum install ipa-gothic-fonts xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-utils xorg-x11-fonts-cyrillic xorg-x11-fonts-Type1 xorg-x11-fonts-misc -y
+
+```
+
+### 安装中文字体
+
+可以先通过命令查看是否有需要的中文字体：
+
+```bash
+
+fc-list :lang=zh
+
+```
+
+通常是没有任何内容，这时候可以把把windows系统字体文件夹中，你所需要的字体发送到 /usr/share/fonts/ 文件夹内，一般只需要宋体和微软雅黑就行了。
+
+然后需要执行如下命令刷新字体：
+
+```bash
+
+sudo mkfontscale
+sudo mkfontdir
+
+```
+
+在此执行字体查看，可以看到有字体：
+
+```bash
+
+[root@agile ~]# fc-list :lang=zh
+/usr/share/fonts/msyh.ttc: Microsoft YaHei:style=Normal
+/usr/share/fonts/msyh.ttc: Microsoft YaHei UI:style=Normal
+/usr/share/fonts/simsun.ttc: 宋体,SimSun:style=常规,Regular
+/usr/share/fonts/msyhbd.ttc: Microsoft YaHei:style=Έντονα
+/usr/share/fonts/msyhbd.ttc: Microsoft YaHei UI:style=Έντονα
+/usr/share/fonts/msyhl.ttc: Microsoft YaHei,Microsoft YaHei Light:style=Light,Regular
+/usr/share/fonts/msyhl.ttc: Microsoft YaHei UI,Microsoft YaHei UI Light:style=Light,Regular
+/usr/share/fonts/simsun.ttc: 新宋体,NSimSun:style=常规,Regular
+
+```
+
+
+
+
+
 
 
