@@ -1,5 +1,5 @@
 
-# 使用
+# html转pdf使用
 
 ## 第一步：将puppeteer-utils作为项目依赖并安装
 
@@ -79,6 +79,7 @@ const pdfFilePath = path.join(__dirname, 'index.pdf');
         url, // 设置要生成pdf的html页面地址
         savePath: pdfFilePath, // pdf文件的完整路径
         // waitTime: 3000 // 页面请求后等待时间
+        // styleContent: `` // 注入页面样式
         pdfOpts: {
             displayHeaderFooter: true, // 显示页眉页脚
             headerTemplate: `<div
@@ -99,6 +100,27 @@ const pdfFilePath = path.join(__dirname, 'index.pdf');
 
 
 ```
+
+
+# 合并pdf使用
+
+## 示例
+
+
+```javascript
+
+const path = require('path');
+
+const mergePdf = require('puppeteer-utils/mergePdf');
+
+mergePdf(
+    path.join(__dirname, 'merge.pdf'), // 第一个参数是最终合并后的文件路径
+    path.join(__dirname, 'mmi.pdf'), // 往后的每一个参数按顺序合并到上述文件
+    path.join(__dirname, 'index.pdf')
+);
+
+```
+
 
 # F & Q
 
@@ -160,7 +182,6 @@ sudo mkfontdir
 /usr/share/fonts/simsun.ttc: 新宋体,NSimSun:style=常规,Regular
 
 ```
-
 
 
 

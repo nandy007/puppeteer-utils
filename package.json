@@ -9,6 +9,7 @@
   "author": "nandy007",
   "license": "MIT",
   "dependencies": {
+    "hummus": "^1.0.108",
     "puppeteer-core": "4.0.1"
   }
 }
