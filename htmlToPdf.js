@@ -14,7 +14,7 @@ module.exports = async function (opts) {
 
         const page = await browser.newPage();
 
-        await page.goto(url, { waitUntil: 'networkidle2' });
+        await page.goto(url, { waitUntil: 'networkidle0' });
 
         if (waitTime) {
             await page.waitFor(waitTime);
