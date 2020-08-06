@@ -107,4 +107,4 @@ const muti = async function(opts) {
 
 
 
-module.exports = single;
+module.exports = muti;
