@@ -9,7 +9,6 @@
   "author": "nandy007",
   "license": "MIT",
   "dependencies": {
-    "generic-pool": "^3.7.1",
     "hummus": "^1.0.108",
     "puppeteer-core": "4.0.1"
   }
