@@ -17,6 +17,10 @@ const single = async function (opts) {
 
         const page = await browser.newPage();
 
+        // await page.setDefaultNavigationTimeout(120*1000);
+        
+        opts.init && await opts.init(page);
+
         await page.goto(url, { waitUntil: 'networkidle0', timeout: 0 });
 
         if (waitTime) {
